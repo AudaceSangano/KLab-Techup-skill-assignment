@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KLAB Test| Question2</title>
+</head>
+<body>
+    <div class="information">
+        <span id="chip"></span>
+        <span id="exp"></span>
+        <span id="summation"></span>
+        <span id="subTotal"></span>
+    </div>
+</body>
+</html>
+<script>
+
+const item = [ {name: 'Bike', price:100},
+ {name: 'TV', price:200},
+ {name: 'Album', price:10},
+ {name: 'Book', price:5}, 
+ {name: 'Phone', price:500}, 
+ {name: 'Computer', price:1000}];
+// function to sort array by property price(expensive)
+
+function comparePrice(a, b) {
+
+    const price1 = a.price;
+    const price2 = b.price;
+
+    let comparison = 0;
+
+    if (price1 > price2) {
+        comparison = -1;
+    } else if (price1 < price2) {
+        comparison = 1;
+    }
+    return comparison;
+}
+
+//cheapest Product
+var auddy = item.sort(comparePrice).reverse();
+var chip = auddy[0];
+//console output and html output
+console.log("the cheapest goods is "+chip.name+" with "+chip.price+" $");
+document.getElementById("chip").innerHTML="the cheapest goods is "+chip.name+" with "+chip.price+" $<br>";
+
+//Expensive Product
+var sano = item.sort(comparePrice);
+var exp = sano[0];
+
+console.log("the Expensive goods is "+exp.name+" with "+exp.price+" $");
+document.getElementById("exp").innerHTML="the Expensive goods is "+exp.name+" with "+exp.price+" $<br>";
+
+//Total Cost
+var sum = 0;
+var sum1 = 0;
+
+//Total cost of all product combined
+item.forEach(sano => {
+    sum+=sano.price;
+});
+//console output and html output
+console.log("full price of all product combined: "+sum);
+document.getElementById("summation").innerHTML="full price of all product combined: "+sum+" $<br>";
+
+//Total cost of all product except less than 10 $ product
+
+item.forEach(sano => {
+    if (sano.price >= 10) {
+        sum1+=sano.price;
+    }
+});
+//console output and html output
+console.log("full price of all product combined without under 10 dollar cost: "+sum1);
+document.getElementById("subTotal").innerHTML="full price of all product combined without under 10 dollar cost: "+sum1+" $<br>";
+</script>
