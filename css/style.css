@@ -66,7 +66,7 @@ p {
 }
 input[type="text"] {
 	width: 100%;
-	padding: 12px 20px;
+	padding: 0px 0px;
 	box-sizing: border-box;
 	border: none;
 	border-bottom: 2px solid black;
@@ -80,8 +80,9 @@ textarea {
 	border-bottom: 2px solid black;
 }
 .btn {
-	background-color: #d45b15;
+	background-color: #ff8d5e;
 	border: none;
+	border
 	color: white;
 	padding: 10px 15px;
 	text-align: center;
